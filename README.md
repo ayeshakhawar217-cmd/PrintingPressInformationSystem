@@ -2,6 +2,8 @@
 
 ## Overview
 The Printing Press Management System is a desktop application built using C# Windows Forms (.NET Framework) with SQL Server and Entity Framework (Database First approach).
+<img width="960" height="512" alt="PP1" src="https://github.com/user-attachments/assets/344182b3-ae91-4401-8261-b4fc38499955" />
+
 
 It manages complete printing press operations including customers, orders, services, payments, and order tracking.
 
