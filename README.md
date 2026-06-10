@@ -1,4 +1,4 @@
-Printing Press Management System (WinForms + SQL Server)
+#Printing Press Management System (WinForms + SQL Server)
 
 Overview
 The Printing Press Management System is a desktop application built using C# Windows Forms (.NET Framework) and SQL Server with Entity Framework (Database First approach).
