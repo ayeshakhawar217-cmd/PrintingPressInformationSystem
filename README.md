@@ -1,90 +1,90 @@
-#Printing Press Management System (WinForms + SQL Server)
+# Printing Press Management System (WinForms + SQL Server)
 
-Overview
-The Printing Press Management System is a desktop application built using C# Windows Forms (.NET Framework) and SQL Server with Entity Framework (Database First approach).
-It is designed to manage complete printing press operations including customers, orders, services, payments, and order tracking.
+## Overview
+The Printing Press Management System is a desktop application built using C# Windows Forms (.NET Framework) with SQL Server and Entity Framework (Database First approach).
 
-Technologies Used
-C# (WinForms)
-.NET Framework
-SQL Server
-Entity Framework (EDMX)
-ADO.NET (if used in some modules)
-Visual Studio
+It manages complete printing press operations including customers, orders, services, payments, and order tracking.
 
-Features
-👤 Customer Management (Add, Update, Delete, View)
-📦 Order Management System
-🛠️ Service Management (Printing services with rates)
-📄 Order Details with quantity and pricing
-💳 Payment Tracking System
-📊 Order Status Tracking (Pending / Completed / Processing)
-🔗 Relational database with proper relationships
-🗄️ Database Design (ERD)
+## Technologies Used
+- C# (WinForms)
+- .NET Framework
+- SQL Server
+- Entity Framework (EDMX)
+- ADO.NET (some modules)
+- Visual Studio
 
-The system is built on a fully relational database structure ensuring normalization and proper entity relationships.
+## Features
+- Customer Management (Add, Update, Delete, View)
+- Order Management System
+- Service Management (Printing services with rates)
+- Order Details with quantity and pricing
+- Payment Tracking System
+- Order Status Tracking (Pending / Processing / Completed)
+- Relational database with proper relationships
 
-📌 ER Diagram:
-        <img width="364" height="360" alt="PrintingPressERD" src="https://github.com/user-attachments/assets/2be642b4-8c37-4794-bf32-9ab4b80e5427" />
+## ER Diagram
+<img width="364" height="360" alt="PrintingPressERD" src="https://github.com/user-attachments/assets/2be642b4-8c37-4794-bf32-9ab4b80e5427" />
 
-🧱 Database Structure
+## Database Structure
 
-Main Entities:
+Customer  
+- CustomerID (PK)  
+- CustomerName  
+- Phone  
+- Address  
 
-👤 Customer
-CustomerID (PK)
-CustomerName
-Phone
-Address
-📦 Order
-OrderID (PK)
-CustomerID (FK)
-OrderDate
-DeliveryDate
-Status
-🛠️ Service
-ServiceID (PK)
-ServiceName
-Rate
-📄 OrderDetail
-OrderDetailID (PK)
-OrderID (FK)
-ServiceID (FK)
-Quantity
-Rate
-💳 Payment
-PaymentID (PK)
-OrderID (FK)
-PaidAmount
-PaymentDate
-🔗 Relationships
-One Customer → Many Orders
-One Order → Many OrderDetails
-One Service → Many OrderDetails
-One Order → Many Payments
-🛠️ Setup Instructions
-1️⃣ Clone Repository
-git clone https://github.com/your-username/printing-press-system.git
-2️⃣ Database Setup
-Open SQL Server Management Studio (SSMS)
+Order  
+- OrderID (PK)  
+- CustomerID (FK)  
+- OrderDate  
+- DeliveryDate  
+- Status  
 
-Create a new database named:
+Service  
+- ServiceID (PK)  
+- ServiceName  
+- Rate  
 
+OrderDetail  
+- OrderDetailID (PK)  
+- OrderID (FK)  
+- ServiceID (FK)  
+- Quantity  
+- Rate  
+
+Payment  
+- PaymentID (PK)  
+- OrderID (FK)  
+- PaidAmount  
+- PaymentDate  
+
+## Relationships
+- One Customer → Many Orders  
+- One Order → Many OrderDetails  
+- One Service → Many OrderDetails  
+- One Order → Many Payments  
+
+## Setup Instructions
+
+1. Clone the repository using:
+git clone https://github.com/ayeshakhawar217-cmd/printing-press-system.git
+
+2. Open SQL Server Management Studio (SSMS) and create a new database named:
 PrintingPressdb
 
-Run the provided file:
-
+3. Run the provided database script file:
 database.sql
-3️⃣ Configure Connection String
 
-Make sure your App.config contains:
+4. Open the project in Visual Studio.
 
+5. Ensure the connection string in App.config is set correctly:
 data source=.\SQLEXPRESS;
 initial catalog=PrintingPressdb;
 integrated security=True;
-4️⃣ Run Project
-Open solution in Visual Studio
-Set startup project
-Press Start (F5)
 
-Project Type: Academic / Portfolio Project
+6. Build the solution to restore all dependencies.
+
+7. Set the project as Startup Project.
+
+8. Run the application using F5.
+
